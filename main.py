@@ -1,6 +1,6 @@
 import streamlit as st # type: ignore
 import pandas as pd # type: ignore
-
+from mylib import get_summary
 
 st.title('Resolute AI - Data Science Task')
 st.header('Task 1: K-means Clustering')
@@ -37,3 +37,14 @@ st.header('Task 3: Datewise Analysis')
 st.subheader('Analysis of the data')
 
 st.write(processed_data)
+
+
+# Task 6: Q/A with PDF
+
+st.header('Task 5: PDF Summarizer')
+st.write("first boot takes time as it install the model weights")
+pdf = st.file_uploader("Upload your PDF File and Ask Questions", type="pdf")
+
+if pdf is not None:
+    summary = get_summary(pdf)
+    st.write(summary)

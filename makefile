@@ -1,6 +1,6 @@
 git:
 	git pull
-	git add *
+	git add -A
 	git commit
 	git push
 
@@ -9,5 +9,9 @@ format:
 
 run:
 	streamlit run main.py
+
+install:
+	pip --upgrade pip&&\
+	pip install -r requirements.txt
 
 	
